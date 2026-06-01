@@ -4,7 +4,7 @@ _pkgname='IMSProg'
 depends=('libusb>=1.0.20' 'qt6-base' 'wget')
 makedepends=('cmake>=3.13.0', 'qt6-tools')
 url="https://github.com/bigbigmdm/$pkgname"
-pkgver='1.8.3'
+pkgver='1.8.4'
 pkgrel='1'
 arch=('x86_64')
 license=('GPL-3.0-only')
@@ -13,7 +13,7 @@ source=("$url/archive/refs/tags/v$pkgver.tar.gz")
 
 # Used in lieu of upstream hash
 # curl -Ls https://github.com/bigbigmdm/IMSProg/archive/refs/tags/v$pkgver.tar.gz | b2sum | cut -d ' ' -f 1
-b2sums=('7af16b4f415ced3ebe742317431e75cd8613d7958ca2ce32a0caa611ee7564eeacfe796729bbb6712e66ad41bebfb5edbbb9874ae835fa97cad3b0c18faacf5f')
+b2sums=('63b252b58bde56b8b8fe6245debe521b0c9997d9c1a7100275da18a42bbc3f8d0bb741b6b378cc96da6742b9c7491b66e396ef2f6c8fbbe78a93c00450ab7d74')
 
 _srcprefix="$_pkgname-$pkgver/$_pkgname"
 _srcdirs=("${_srcprefix}_editor" "${_srcprefix}_programmer")
