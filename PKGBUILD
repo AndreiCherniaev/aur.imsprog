@@ -1,14 +1,14 @@
 # Maintainer: Kristopher James Kent <kris@kjkent.dev>
 pkgname='imsprog'
 _pkgname='IMSProg'
-depends=('libusb>=1.0.20' 'qt5-base' 'wget')
-makedepends=('cmake>=3.10.0', 'qt5-tools')
+depends=('libusb>=1.0.20' 'qt6-base' 'wget')
+makedepends=('cmake>=3.13.0', 'qt6-tools')
 url="https://github.com/bigbigmdm/$pkgname"
 pkgver='1.8.3'
 pkgrel='1'
 arch=('x86_64')
 license=('GPL-3.0-only')
-pkgdesc='I2C, SPI and MicroWire EEPROM/flash chip programmer for CH341a devices.'
+pkgdesc='I2C, SPI and MicroWire EEPROM/flash chip programmer for CH341A devices.'
 source=("$url/archive/refs/tags/v$pkgver.tar.gz")
 
 # Used in lieu of upstream hash
