@@ -2,7 +2,7 @@
 pkgname='imsprog'
 _pkgname='IMSProg'
 depends=('libusb>=1.0.20' 'qt6-base' 'wget')
-makedepends=('cmake>=3.13.0', 'qt6-tools')
+makedepends=('cmake>=3.13.0' 'ninja' 'qt6-tools')
 url="https://github.com/bigbigmdm/$pkgname"
 pkgver='1.8.4'
 pkgrel='1'
@@ -37,7 +37,7 @@ build() {
   for srcdir in "${_srcdirs[@]}"; do
     local bindir="$srcdir/build"
 
-    cmake "${cmakeopts[@]}" -S "$srcdir" -B "$bindir"
+    cmake "${cmakeopts[@]}" -S "$srcdir" -B "$bindir" -G Ninja 
     cmake --build "$bindir" --parallel
   done
 }
@@ -46,6 +46,6 @@ package() {
   local bindir
 
   for bindir in "${_srcdirs[@]/%//build}"; do
-    DESTDIR="$pkgdir" cmake --install "$bindir"
+    DESTDIR="$pkgdir" cmake --install "$bindir" --parallel 4
   done
 }
